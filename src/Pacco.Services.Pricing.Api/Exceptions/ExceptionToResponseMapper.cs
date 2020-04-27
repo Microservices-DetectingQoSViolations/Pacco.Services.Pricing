@@ -1,6 +1,7 @@
+using Convey.Exceptions;
+using Convey.WebApi.Exceptions;
 using System;
 using System.Net;
-using Convey.WebApi.Exceptions;
 
 namespace Pacco.Services.Pricing.Api.Exceptions
 {
