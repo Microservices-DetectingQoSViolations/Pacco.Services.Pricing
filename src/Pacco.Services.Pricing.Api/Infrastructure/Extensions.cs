@@ -5,6 +5,7 @@ using Convey.Docs.Swagger;
 using Convey.HTTP;
 using Convey.LoadBalancing.Fabio;
 using Convey.Metrics.AppMetrics;
+using Convey.Persistence.Redis;
 using Convey.QoS.Violation;
 using Convey.Tracing.Jaeger;
 using Convey.WebApi;
@@ -31,6 +32,7 @@ namespace Pacco.Services.Pricing.Api.Infrastructure
                 .AddHttpClient()
                 .AddConsul()
                 .AddFabio()
+                .AddRedis()
                 .AddMetrics()
                 .AddJaeger()
                 .AddQoSTrackingDecorators()
