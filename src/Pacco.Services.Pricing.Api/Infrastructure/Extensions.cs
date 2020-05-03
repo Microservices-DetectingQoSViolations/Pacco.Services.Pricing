@@ -35,7 +35,7 @@ namespace Pacco.Services.Pricing.Api.Infrastructure
                 .AddRedis()
                 .AddMetrics()
                 .AddJaeger()
-                .AddQoSTrackingDecorators()
+                .AddQoSViolation()
                 .AddWebApiSwaggerDocs();
         }
         
@@ -45,7 +45,7 @@ namespace Pacco.Services.Pricing.Api.Infrastructure
                 .UseSwaggerDocs()
                 .UseJaeger()
                 .UseConvey()
-                .UseQoSCache()
+                .UseQoS()
                 .UseMetrics();
 
             return app;
