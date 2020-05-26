@@ -45,7 +45,7 @@ namespace Pacco.Services.Pricing.Api.Infrastructure
                 .UseSwaggerDocs()
                 .UseJaeger()
                 .UseConvey()
-                .UseQoS()
+                .UseQoSCache()
                 .UseMetrics();
 
             return app;

@@ -2,6 +2,7 @@
 using Convey;
 using Convey.Secrets.Vault;
 using Convey.Logging;
+using Convey.QoS.Violation.Runtime;
 using Convey.Types;
 using Convey.WebApi;
 using Convey.WebApi.CQRS;
@@ -28,7 +29,8 @@ namespace Pacco.Services.Pricing.Api
                     .UseInfrastructure()
                     .UseDispatcherEndpoints(endpoints => endpoints
                         .Get("", ctx => ctx.Response.WriteAsync(ctx.RequestServices.GetService<AppOptions>().Name))
-                        .Get<GetOrderPricing, OrderPricingDto>("pricing")))
+                        .Get<GetOrderPricing, OrderPricingDto>("pricing"))
+                    .UseRuntimeMetrics())
                 .UseLogging()
                 .UseVault()
                 .Build()
